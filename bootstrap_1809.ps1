@@ -54,8 +54,8 @@ Write-Host "#### Installing Docker..."
 Invoke-Expression -Command C:\src\TaskScripts\1809\setup_docker_host.ps1
 Write-Host " "
 
-Write-Host "#### Installing Monitoring Agent..."
-Invoke-Expression -Command C:\src\TaskScripts\1809\setup_dd_agent.ps1
+#Write-Host "#### Installing Monitoring Agent..."
+#Invoke-Expression -Command C:\src\TaskScripts\1809\setup_dd_agent.ps1
 Write-Host " "
 
 Write-Host "#### Creating Reboot tasks..."
