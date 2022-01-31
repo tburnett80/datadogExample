@@ -54,8 +54,15 @@ Write-Host "#### Installing Docker..."
 Invoke-Expression -Command C:\src\TaskScripts\1809\setup_docker_host.ps1
 Write-Host " "
 
-#Write-Host "#### Installing Monitoring Agent..."
-#Invoke-Expression -Command C:\src\TaskScripts\1809\setup_dd_agent.ps1
+Write-Host "#### Installing Monitoring Agent..."
+Write-Host "## Setting Environment Variables...";
+[Environment]::SetEnvironmentVariable('DD_ENV', 'eval', 'Machine');
+[Environment]::SetEnvironmentVariable('DD_LOGS_ENABLED', 'true', 'Machine');
+[Environment]::SetEnvironmentVariable('DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL', 'true', 'Machine');
+[Environment]::SetEnvironmentVariable('DD_APM_CONFIG_ENABLED', 'true', 'Machine');
+[Environment]::SetEnvironmentVariable('DD_APM_CONFIG_APM_NON_LOCAL_TRAFFIC', 'true', 'Machine');
+Update-SessionEnvironment
+Invoke-Expression -Command C:\src\TaskScripts\1809\setup_dd_agent.ps1
 Write-Host " "
 
 Write-Host "#### Creating Reboot tasks..."
