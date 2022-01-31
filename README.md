@@ -1,10 +1,10 @@
 # datadogExample
 used to share data dog config script examples
 
-This set of scripts should be able to 'bootstrap' a brand new 1809 ( Windows Server 2019 ) machine to run Docker, and have both apps instrumented with with datadog APM.
+This set of scripts should be able to 'bootstrap' a brand new 1809 ( Windows Server 2019 ) machine to run Docker, and have both a dotnet framework asp.net app and a core 5 web api project instrumented with with datadog APM.
 
 
-To reproduct this I do the following:
+To reproduce this I do the following:
 
 1. Create a VM with the October update of 1809 
 2. Install updates and reboot until there are no more updates
